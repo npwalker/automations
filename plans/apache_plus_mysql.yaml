@@ -12,3 +12,8 @@ steps:
     - class: mysql::server
     targets: $targets
     description: "Install and configure MySQL with the MySQL module from the Forge"
+  - task: mysql::sql
+    targets: $targets
+    description: "Create a database"
+    parameters:
+      sql: "CREATE DATABASE IF NOT EXISTS my_test_db"
