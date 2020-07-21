@@ -3,3 +3,6 @@
 mod 'puppetlabs-apache'
 mod 'puppetlabs-stdlib'
 mod 'puppetlabs-concat'
+mod 'puppetlabs-mysql'
+mod 'puppetlabs-translate'
+mod 'puppetlabs-resource_api'

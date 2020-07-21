@@ -1,0 +1,14 @@
+parameters:
+  targets:
+    type: TargetSpec
+    description: "Which nodes to install Apache and MySQL on"
+
+steps:
+  - resources:
+    - class: apache
+    targets: $targets
+    description: "Install and configure Apache with the Apache module from the Forge"
+  - resources:
+    - class: mysql::server
+    targets: $targets
+    description: "Install and configure MySQL with the MySQL module from the Forge"
