@@ -17,3 +17,10 @@ steps:
     description: "Create a database"
     parameters:
       sql: "CREATE DATABASE IF NOT EXISTS my_test_db"
+  - name: show_databases
+    task: mysql::sql
+    targets: $targets
+    description: "Show the new database is there"
+    parameters:
+      sql: "SHOW DATABASES"
+return: $show_databases
