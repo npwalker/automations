@@ -1,0 +1,10 @@
+parameters:
+  targets:
+    type: TargetSpec
+    description: "Which nodes to install Apache on"
+
+steps:
+  - resources:
+    - class: apache
+    targets: $targets
+    description: "Install and configure Apache with the Apache module from the Forge"
