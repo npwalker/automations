@@ -5,13 +5,10 @@ plan automations::apache_plus_mysql_converted(
   apply_prep($targets)
   apply($targets) {
     class { 'apache': }
-  }
-  apply_prep($targets)
-  apply($targets) {
     class { 'mysql::server': }
   }
   run_task('mysql::sql', $targets, "Create a database", {'sql' => "CREATE DATABASE IF NOT EXISTS my_test_db"})
   $show_databases = run_task('mysql::sql', $targets, "Show the new database is there", {'sql' => "SHOW DATABASES"})
 
-  return $show_databases
+  out::message(String($show_databases.first.value['status']))
 }

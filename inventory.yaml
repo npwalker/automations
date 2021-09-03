@@ -1,2 +1,7 @@
 # Example inventoryfile where target connection information is defined
-# Docs Reference: https://puppet.com/docs/bolt/latest/inventory_file.html
+#Docs Reference: https://puppet.com/docs/bolt/latest/inventory_file.html
+config:
+  ssh:
+    host-key-check: false
+    user: centos
+    run-as: root
